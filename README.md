@@ -25,8 +25,6 @@ Perfect for ages **6–12** with a parent guide and a 5–10 minute play round.
 
 MIT License — safe to share, remix, and use in classrooms.
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/CybersecurityMom/kidcyber-log-detective/main/assets/made-with-love-aqs.svg" alt="Made with Love by AQ’s Corner LLC" />
-</p>
+![Made with Love by AQ’s Corner LLC](./assets/made-with-love-aqs.svg)
 
 
