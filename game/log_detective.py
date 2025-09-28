@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import json, random, os, time
 
-# Path to the logs file
+# Paths
 LOG_PATH = os.path.join(os.path.dirname(__file__), "..", "logs", "sample_logs.jsonl")
 SCOREBOARD_PATH = os.path.join(os.path.dirname(__file__), "..", "scoreboard.txt")
 
@@ -84,4 +84,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
