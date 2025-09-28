@@ -26,18 +26,25 @@ def ask(prompt):
             return ans
         print("Type s = suspicious, n = not suspicious, q = quit")
 
-def banner():
-    print("\n🕵🏾‍♀️  Welcome to KidCyber Log Detective!")
-    print("You’ll see 10 short 'clues'. Decide if each is suspicious (s) or not (n).")
-    print("Type: s = suspicious, n = not suspicious, q = quit\n")
-
 def main():
     logs = load_logs(LOG_PATH)
     if not logs:
         print("No logs found.")
         return
 
-    banner()
+    # 👇 NEW: choose difficulty
+    mode = input("Choose mode: easy or hard: ").strip().lower()
+
+    # filter logs if difficulty tag is used
+    if mode == "hard":
+        logs = [log for log in logs if log.get("difficulty", "easy") == "hard"]
+    else:
+        logs = [log for log in logs if log.get("difficulty", "easy") == "easy"]
+
+    print("\n🕵🏾‍♀️ Welcome to KidCyber Log Detective!")
+    print("You’ll see up to 10 short 'clues'. Decide if each is suspicious (s) or not (n).")
+    print("Type: s = suspicious, n = not suspicious, q = quit\n")
+
     random.shuffle(logs)
     score = 0
 
@@ -58,9 +65,10 @@ def main():
 
         print("Hint:", explain(log))
         print("-" * 50)
-        time.sleep(0.4)
+        time.sleep(0.5)
 
     print(f"\n🎉 Final Score: {score}/10")
 
 if __name__ == "__main__":
     main()
+
