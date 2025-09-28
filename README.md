@@ -24,3 +24,7 @@ Perfect for ages **6–12** with a parent guide and a 5–10 minute play round.
 - 🛫 Impossible travel (2 countries in minutes)
 
 MIT License — safe to share, remix, and use in classrooms.
+
+<p align="center">
+  <img src="assets/made-with-love-aqs.svg" alt="Made with Love by AQ’s Corner LLC" />
+</p>
