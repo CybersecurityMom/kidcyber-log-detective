@@ -4,3 +4,6 @@
 {"time":"2025-09-21T23:03:11Z","user":"noah","action":"login_success","ip":"68.10.5.7","geo":"North Carolina, USA","device":"Android","details":"minutes after Brazil","label":"suspicious","reason":"🛫 Impossible travel: Brazil → USA in minutes."}
 {"time":"2025-09-22T03:12:00Z","user":"sara","action":"login_success","ip":"190.2.1.9","geo":"Unknown","device":"Unknown","details":"new device at 3am","label":"suspicious","reason":"🌙 New device at 3am. Odd timing."}
 {"time":"2025-09-23T12:02:22Z","user":"dad","action":"settings_change","ip":"68.10.5.7","geo":"North Carolina, USA","device":"iPhone","details":"turned on MFA","label":"ok","reason":"Turning on MFA is a good thing 👍."}
+{"time":"2025-09-23T12:02:22Z","user":"dad","action":"settings_change","ip":"68.10.5.7","geo":"North Carolina, USA","device":"iPhone","details":"turned on MFA","label":"ok","reason":"👍 Turning on MFA is good."}
+{"time":"2025-09-25T10:22:00Z","user":"emma","action":"file_share","ip":"88.12.3.2","geo":"UK","device":"Mac","details":"shared cat.png","label":"ok","reason":"Sharing a cat picture is fine 🐱."}
+{"time":"2025-09-25T02:40:10Z","user":"admin","action":"settings_change","ip":"200.99.10.3","geo":"Russia","device":"Linux","details":"disabled MFA","label":"suspicious","reason":"🚨 Turning off MFA at 2am from far away is bad."}
