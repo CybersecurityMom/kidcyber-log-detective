@@ -1,0 +1,6 @@
+{"time":"2025-09-20T02:31:10Z","user":"admin","action":"password_reset","ip":"83.14.22.10","geo":"Poland","device":"Windows","details":"reset for 5 accounts","label":"suspicious","reason":"🌙 Late-night admin resets from far away. Risky!"}
+{"time":"2025-09-20T15:10:00Z","user":"maria","action":"login_success","ip":"68.10.5.7","geo":"North Carolina, USA","device":"iPad","details":"home wifi","label":"ok","reason":"Everyday login from normal place."}
+{"time":"2025-09-20T15:18:05Z","user":"eli","action":"login_failed","ip":"101.44.9.3","geo":"Singapore","device":"Linux","details":"wrong password 6x","label":"suspicious","reason":"🚪 Many failed logins from a new place."}
+{"time":"2025-09-21T23:03:11Z","user":"noah","action":"login_success","ip":"68.10.5.7","geo":"North Carolina, USA","device":"Android","details":"minutes after Brazil","label":"suspicious","reason":"🛫 Impossible travel: Brazil → USA in minutes."}
+{"time":"2025-09-22T03:12:00Z","user":"sara","action":"login_success","ip":"190.2.1.9","geo":"Unknown","device":"Unknown","details":"new device at 3am","label":"suspicious","reason":"🌙 New device at 3am. Odd timing."}
+{"time":"2025-09-23T12:02:22Z","user":"dad","action":"settings_change","ip":"68.10.5.7","geo":"North Carolina, USA","device":"iPhone","details":"turned on MFA","label":"ok","reason":"Turning on MFA is a good thing 👍."}
