@@ -1,3 +1,8 @@
+<p align="center">
+  <img src="assets/made-with-love-aqs.svg" alt="Made with Love by AQ’s Corner LLC" />
+</p>
+
+
 # KidCyber Log Detective 👀🔎
 
 Help your kid become a Log Detective! Read small, friendly “clues” (tiny logs) and decide: **Suspicious or Not?**  
