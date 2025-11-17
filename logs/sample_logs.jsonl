@@ -1,200 +1,172 @@
-# Cyber Log Detective - Simple Yes/No Game (EST times, kid-friendly)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cyber Log Detective – KidCyber Mission</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #0b1b33;
+      color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+    }
+    .card {
+      background: #121e3b;
+      border-radius: 16px;
+      padding: 24px 20px 28px;
+      max-width: 640px;
+      width: 92%;
+      margin: 32px auto;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+      border: 1px solid #253765;
+    }
+    h1 {
+      font-size: 1.6rem;
+      margin-top: 0;
+      margin-bottom: 0.4rem;
+      color: #9be2ff;
+    }
+    h2 {
+      font-size: 1.1rem;
+      margin: 0.6rem 0;
+      color: #ffd86b;
+    }
+    p {
+      line-height: 1.5;
+      font-size: 0.98rem;
+      margin: 0.4rem 0;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: #1e2c52;
+      color: #9be2ff;
+      margin-bottom: 0.75rem;
+    }
+    .section {
+      margin-top: 1rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid #24335e;
+    }
+    .button {
+      display: inline-block;
+      margin-top: 0.75rem;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: #3abaeb;
+      color: #04101f;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.95rem;
+      border: none;
+      cursor: pointer;
+    }
+    .button:hover {
+      background: #66cfff;
+    }
+    .steps {
+      margin: 0.4rem 0 0.2rem;
+      padding-left: 1.1rem;
+      font-size: 0.9rem;
+    }
+    .steps li {
+      margin: 0.15rem 0;
+    }
+    .code-hint {
+      font-family: "SF Mono", Menlo, Monaco, monospace;
+      font-size: 0.82rem;
+      background: #0c1427;
+      padding: 6px 8px;
+      border-radius: 8px;
+      margin-top: 0.4rem;
+      overflow-x: auto;
+    }
+    .small {
+      font-size: 0.8rem;
+      opacity: 0.8;
+      margin-top: 0.6rem;
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="badge">KidCyber Mission – Log Detective</div>
+    <h1>Cyber Log Detective</h1>
+    <p>
+      Welcome, CyberHero! 🕵️‍♀️ Your job is to read the Cyber Log and decide
+      whether each event is <strong>suspicious</strong> or <strong>normal</strong>.
+    </p>
 
-logs = [
-    {
-        'time': 'September 19, 2025 – 9:31 PM EST',
-        'user': 'admin',
-        'action': 'password_reset',
-        'geo': 'Poland',
-        'device': 'Windows',
-        'details': 'reset for 5 accounts',
-        'suspicious': True,
-    },
-    {
-        'time': 'September 20, 2025 – 10:10 AM EST',
-        'user': 'maria',
-        'action': 'login_success',
-        'geo': 'North Carolina, USA',
-        'device': 'iPad',
-        'details': 'home wifi',
-        'suspicious': False,
-    },
-    {
-        'time': 'September 20, 2025 – 10:18 AM EST',
-        'user': 'eli',
-        'action': 'login_failed',
-        'geo': 'Singapore',
-        'device': 'Linux',
-        'details': 'wrong password 6x',
-        'suspicious': True,
-    },
-    {
-        'time': 'September 21, 2025 – 3:00 AM EST',
-        'user': 'guest',
-        'action': 'login_success',
-        'geo': 'Local Network',
-        'device': 'Chromebook',
-        'details': 'library kiosk',
-        'suspicious': False,
-    },
-    {
-        'time': 'September 21, 2025 – 3:12 AM EST',
-        'user': 'admin',
-        'action': 'account_delete',
-        'geo': 'Unknown',
-        'device': 'Unknown',
-        'details': 'deleted 20 test users',
-        'suspicious': True,
-    },
-    {
-        'time': 'September 21, 2025 – 5:55 PM EST',
-        'user': 'noah',
-        'action': 'login_success',
-        'geo': 'Brazil',
-        'device': 'Android',
-        'details': 'travel SIM',
-        'suspicious': False,
-    },
-    {
-        'time': 'September 21, 2025 – 6:03 PM EST',
-        'user': 'noah',
-        'action': 'login_success',
-        'geo': 'North Carolina, USA',
-        'device': 'Android',
-        'details': 'minutes after Brazil',
-        'suspicious': True,
-    },
-    {
-        'time': 'September 21, 2025 – 10:12 PM EST',
-        'user': 'sara',
-        'action': 'login_success',
-        'geo': 'Unknown',
-        'device': 'Unknown',
-        'details': 'new device at 3am',
-        'suspicious': True,
-    },
-    {
-        'time': 'September 22, 2025 – 11:05 AM EST',
-        'user': 'sara',
-        'action': 'file_share',
-        'geo': 'North Carolina, USA',
-        'device': 'Mac',
-        'details': 'shared math.png with mom',
-        'suspicious': False,
-    },
-    {
-        'time': 'September 22, 2025 – 1:22 PM EST',
-        'user': 'teacher',
-        'action': 'group_create',
-        'geo': 'North Carolina, USA',
-        'device': 'Windows',
-        'details': 'created class group',
-        'suspicious': False,
-    },
-    {
-        'time': 'September 22, 2025 – 1:25 PM EST',
-        'user': 'teacher',
-        'action': 'file_delete',
-        'geo': 'Germany',
-        'device': 'Windows',
-        'details': 'deleted 100 photos',
-        'suspicious': True,
-    },
-    {
-        'time': 'September 23, 2025 – 7:01 AM EST',
-        'user': 'dad',
-        'action': 'login_success',
-        'geo': 'North Carolina, USA',
-        'device': 'iPhone',
-        'details': 'lunch break',
-        'suspicious': False,
-    },
-    {
-        'time': 'September 23, 2025 – 7:02 AM EST',
-        'user': 'dad',
-        'action': 'settings_change',
-        'geo': 'North Carolina, USA',
-        'device': 'iPhone',
-        'details': 'turned on MFA',
-        'suspicious': False,
-    },
-    {
-        'time': 'September 23, 2025 – 6:59 PM EST',
-        'user': 'guest',
-        'action': 'login_failed',
-        'geo': 'Unknown',
-        'device': 'Unknown',
-        'details': 'wrong password 9x',
-        'suspicious': True,
-    },
-    {
-        'time': 'September 25, 2025 – 10:30 AM EST',
-        'user': 'sara',
-        'action': 'login_success',
-        'geo': 'California, USA',
-        'device': 'New Laptop',
-        'details': 'first time seen',
-        'suspicious': True,
-    },
-    {
-        'time': 'September 25, 2025 – 5:22 AM EST',
-        'user': 'emma',
-        'action': 'file_share',
-        'geo': 'UK',
-        'device': 'Mac',
-        'details': 'shared cat.png',
-        'suspicious': False,
-    },
-    {
-        'time': 'September 24, 2025 – 9:40 PM EST',
-        'user': 'admin',
-        'action': 'settings_change',
-        'geo': 'Russia',
-        'device': 'Linux',
-        'details': 'disabled MFA',
-        'suspicious': True,
-    },
-    {
-        'time': 'September 26, 2025 – 5:10 PM EST',
-        'user': 'mom',
-        'action': 'login_success',
-        'geo': 'North Carolina, USA',
-        'device': 'Family Laptop',
-        'details': 'evening login',
-        'suspicious': False,
-    },
-    {
-        'time': 'September 27, 2025 – 4:15 AM EST',
-        'user': 'teacher',
-        'action': 'settings_change',
-        'geo': 'Vacation Resort',
-        'device': 'Tablet',
-        'details': 'changed grading settings',
-        'suspicious': True,
-    },
-]
+    <div class="section">
+      <h2>Step 1: Download the Log File</h2>
+      <p>
+        Click the button below to download your Cyber Log file
+        to your computer. It uses <strong>EST time</strong> and
+        <strong>kid-friendly dates</strong>.
+      </p>
 
-print("\n🕵️ Cyber Log Detective — Yes/No Game (EST)\n")
+      <a class="button" href="logs/sample_logs.jsonl" download>
+        ⬇️ Download the Cyber Log File
+      </a>
 
-score = 0
+      <p class="small">
+        Tip: You can open the file in a text editor to read it, or use it
+        together with the Terminal game.
+      </p>
+    </div>
 
-for entry in logs:
-    print(f"[{entry['time']}] user={entry['user']} {entry['action']}")
-    print(f"geo={entry['geo']} device={entry['device']} details={entry['details']}\n")
+    <div class="section">
+      <h2>Step 2: (Optional) Play in the Terminal</h2>
+      <p>
+        If you have the <code>detective.py</code> game on your computer,
+        you can run it from the Terminal and answer <strong>yes/no</strong>
+        for each log entry.
+      </p>
+      <ol class="steps">
+        <li>Open Terminal.</li>
+        <li>Go to the folder with the game:</li>
+      </ol>
+      <div class="code-hint">
+        cd ~/Desktop/kidcyber-log-detective-main/cli_version
+      </div>
+      <ol class="steps" start="3">
+        <li>Run the game:</li>
+      </ol>
+      <div class="code-hint">
+        python3 detective.py
+      </div>
+      <p class="small">
+        The game will show you each log with the EST time and ask:
+        <em>"Is this suspicious? (yes/no)"</em>.
+      </p>
+    </div>
 
-    answer = input("Question: Is this suspicious? (yes/no): ").strip().lower()
-    correct = "yes" if entry["suspicious"] else "no"
-
-    if answer.startswith(correct[0]):  # y/n shortcut
-        score += 1
-        if correct == "yes":
-            print("✅ Correct! This one IS suspicious.\n")
-        else:
-            print("✅ Correct! This one is NORMAL.\n")
-    else:
-        if correct == "yes":
-            print("❌ Not quite. This one IS suspicious.\n")
-        else:
-            print("❌ Not quite. This one is actually normal.\n")
-
-print(f"Game over! You answered {score} out of {len(logs)} correctly.\n") 
+    <div class="section">
+      <h2>How to Read the Time</h2>
+      <p>
+        Times look like this:
+        <strong>September 20, 2025 – 10:10 AM EST</strong>.
+      </p>
+      <ul class="steps">
+        <li><strong>Date</strong>: Month Day, Year</li>
+        <li><strong>Time</strong>: Hour:Minutes with AM or PM</li>
+        <li><strong>EST</strong>: Eastern Standard Time</li>
+      </ul>
+      <p class="small">
+        Remember: very late at night or very early in the morning
+        can sometimes be a clue that something is suspicious. 🌙
+      </p>
+    </div>
+  </main>
+</body>
+</html>
