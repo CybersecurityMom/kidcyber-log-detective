@@ -37,7 +37,7 @@ kidcyber-log-detective-main/
          index.html
          logs/
             sample_logs.jsonl
-<pre>
+</pre>
 
 📂 Project Structure
 kidcyber-log-detective/
