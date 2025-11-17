@@ -197,4 +197,4 @@ for entry in logs:
         else:
             print("❌ Not quite. This one is actually normal.\n")
 
-print(f"Game over! You answered {score} out of {len(logs)} correctly.\n")
+print(f"Game over! You answered {score} out of {len(logs)} correctly.\n") 
