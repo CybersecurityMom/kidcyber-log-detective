@@ -2,33 +2,94 @@
   <img src="assets/made-with-love-aqs.svg" alt="Made with Love by AQ’s Corner LLC" />
 </p>
 
+# KidCyber Log Detective 👀🔎  
+A mini cyber adventure for kids ages **6–12** (and fun for grown-ups too!)
 
-# KidCyber Log Detective 👀🔎
+Your child becomes a **CyberHero Log Detective** — reading tiny log “clues,” spotting strange behavior, and deciding:  
+**Is this suspicious or normal?**
 
-Help your kid become a Log Detective! Read small, friendly “clues” (tiny logs) and decide: **Suspicious or Not?**  
-Perfect for ages **6–12** with a parent guide and a 5–10 minute play round.
+This activity is fast, friendly, and perfect for classrooms, after-school groups, libraries, or at home.
 
-## Quick Start
-1. Make sure you have Python 3 installed.
-2. Download this repo (Code → Download ZIP).
-3. Unzip and open Terminal (Mac) or PowerShell (Windows).
-4. Run:
+---
 
-(Windows may need `python` or `py` instead of `python3`.)
+# 🚀 Two Ways to Play
 
-## What’s Inside
-- `game/log_detective.py` → the game
-- `logs/sample_logs.jsonl` → practice logs
-- `printables/worksheet.md` → kid-friendly worksheet & badge
+This project now includes **two versions**:
 
-## Suspicious Patterns Kids Can Spot
-- 🌙 Late-night logins
-- 🚪 Too many failed logins
-- 🌍 Logins from far-away places
-- 👑 Admins deleting or resetting lots
-- 🛫 Impossible travel (2 countries in minutes)
+## 1️⃣ CLI Version (Terminal Game)
+A simple yes/no game you run on your computer.
 
-MIT License — safe to share, remix, and use in classrooms.
+- Shows **one log at a time**
+- Uses **kid-friendly EST timestamps**
+- Players answer:  
+  **“Is this suspicious? (yes/no)”**
+
+### How to run (Mac/Windows):
+```bash
+cd cli_version
+python3 detective.py
+
+<pre>
+kidcyber-log-detective-main/
+    cli_version/
+         detective.py
+    html_version/
+         index.html
+         logs/
+            sample_logs.jsonl
+<pre>
+
+📂 Project Structure
+kidcyber-log-detective/
+│
+├── cli_version/
+│     └── detective.py        ← Yes/No Terminal Game
+│
+├── html_version/
+│     ├── index.html          ← Web download page
+│     └── logs/
+│           └── sample_logs.jsonl  ← EST log file
+│
+└── assets/
+      └── made-with-love-aqs.svg
+
+🕵️ What Kids Learn
+
+Kids practice spotting real-world security clues:
+
+🌙 Late-night activity
+
+🚪 Too many failed password attempts
+
+🌍 Unusual countries or far-away locations
+
+👑 Admins doing risky actions
+
+🛫 Impossible travel (two countries in minutes!)
+
+🤔 New devices at strange times
+
+Everything is written in clear, friendly language perfect for beginners.
+
+🧠 Learning Outcomes
+
+Kids will:
+
+Build security intuition
+
+Scan logs like a junior analyst
+
+Make simple decisions with confidence
+
+Understand what “suspicious” looks like
+
+Feel like REAL CyberHeroes
+
+❤️ Created With Love
+
+This project is designed by AQ’s Corner, LLC —
+where Motherhood meets Cybersecurity.
+Our mission is to make cyber safety joyful, human, and kid-powered.
 
 
 
