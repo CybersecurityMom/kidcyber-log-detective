@@ -1,38 +1,200 @@
-{"time":"September 19, 2025 – 9:31 PM EST","user":"admin","action":"password_reset","ip":"83.14.22.10","geo":"Poland","device":"Windows","details":"reset for 5 accounts","label":"suspicious","reason":"🌙 Late-night admin resets from far away. Risky!","reason_es":"🌙 Restablecimientos de administrador a medianoche desde lejos. ¡Riesgoso!","difficulty":"easy"}
+# Cyber Log Detective - Simple Yes/No Game (EST times, kid-friendly)
 
-{"time":"September 20, 2025 – 10:10 AM EST","user":"maria","action":"login_success","ip":"68.10.5.7","geo":"North Carolina, USA","device":"iPad","details":"home wifi","label":"ok","reason":"✅ Normal login from home.","reason_es":"✅ Inicio de sesión normal desde casa.","difficulty":"easy"}
+logs = [
+    {
+        'time': 'September 19, 2025 – 9:31 PM EST',
+        'user': 'admin',
+        'action': 'password_reset',
+        'geo': 'Poland',
+        'device': 'Windows',
+        'details': 'reset for 5 accounts',
+        'suspicious': True,
+    },
+    {
+        'time': 'September 20, 2025 – 10:10 AM EST',
+        'user': 'maria',
+        'action': 'login_success',
+        'geo': 'North Carolina, USA',
+        'device': 'iPad',
+        'details': 'home wifi',
+        'suspicious': False,
+    },
+    {
+        'time': 'September 20, 2025 – 10:18 AM EST',
+        'user': 'eli',
+        'action': 'login_failed',
+        'geo': 'Singapore',
+        'device': 'Linux',
+        'details': 'wrong password 6x',
+        'suspicious': True,
+    },
+    {
+        'time': 'September 21, 2025 – 3:00 AM EST',
+        'user': 'guest',
+        'action': 'login_success',
+        'geo': 'Local Network',
+        'device': 'Chromebook',
+        'details': 'library kiosk',
+        'suspicious': False,
+    },
+    {
+        'time': 'September 21, 2025 – 3:12 AM EST',
+        'user': 'admin',
+        'action': 'account_delete',
+        'geo': 'Unknown',
+        'device': 'Unknown',
+        'details': 'deleted 20 test users',
+        'suspicious': True,
+    },
+    {
+        'time': 'September 21, 2025 – 5:55 PM EST',
+        'user': 'noah',
+        'action': 'login_success',
+        'geo': 'Brazil',
+        'device': 'Android',
+        'details': 'travel SIM',
+        'suspicious': False,
+    },
+    {
+        'time': 'September 21, 2025 – 6:03 PM EST',
+        'user': 'noah',
+        'action': 'login_success',
+        'geo': 'North Carolina, USA',
+        'device': 'Android',
+        'details': 'minutes after Brazil',
+        'suspicious': True,
+    },
+    {
+        'time': 'September 21, 2025 – 10:12 PM EST',
+        'user': 'sara',
+        'action': 'login_success',
+        'geo': 'Unknown',
+        'device': 'Unknown',
+        'details': 'new device at 3am',
+        'suspicious': True,
+    },
+    {
+        'time': 'September 22, 2025 – 11:05 AM EST',
+        'user': 'sara',
+        'action': 'file_share',
+        'geo': 'North Carolina, USA',
+        'device': 'Mac',
+        'details': 'shared math.png with mom',
+        'suspicious': False,
+    },
+    {
+        'time': 'September 22, 2025 – 1:22 PM EST',
+        'user': 'teacher',
+        'action': 'group_create',
+        'geo': 'North Carolina, USA',
+        'device': 'Windows',
+        'details': 'created class group',
+        'suspicious': False,
+    },
+    {
+        'time': 'September 22, 2025 – 1:25 PM EST',
+        'user': 'teacher',
+        'action': 'file_delete',
+        'geo': 'Germany',
+        'device': 'Windows',
+        'details': 'deleted 100 photos',
+        'suspicious': True,
+    },
+    {
+        'time': 'September 23, 2025 – 7:01 AM EST',
+        'user': 'dad',
+        'action': 'login_success',
+        'geo': 'North Carolina, USA',
+        'device': 'iPhone',
+        'details': 'lunch break',
+        'suspicious': False,
+    },
+    {
+        'time': 'September 23, 2025 – 7:02 AM EST',
+        'user': 'dad',
+        'action': 'settings_change',
+        'geo': 'North Carolina, USA',
+        'device': 'iPhone',
+        'details': 'turned on MFA',
+        'suspicious': False,
+    },
+    {
+        'time': 'September 23, 2025 – 6:59 PM EST',
+        'user': 'guest',
+        'action': 'login_failed',
+        'geo': 'Unknown',
+        'device': 'Unknown',
+        'details': 'wrong password 9x',
+        'suspicious': True,
+    },
+    {
+        'time': 'September 25, 2025 – 10:30 AM EST',
+        'user': 'sara',
+        'action': 'login_success',
+        'geo': 'California, USA',
+        'device': 'New Laptop',
+        'details': 'first time seen',
+        'suspicious': True,
+    },
+    {
+        'time': 'September 25, 2025 – 5:22 AM EST',
+        'user': 'emma',
+        'action': 'file_share',
+        'geo': 'UK',
+        'device': 'Mac',
+        'details': 'shared cat.png',
+        'suspicious': False,
+    },
+    {
+        'time': 'September 24, 2025 – 9:40 PM EST',
+        'user': 'admin',
+        'action': 'settings_change',
+        'geo': 'Russia',
+        'device': 'Linux',
+        'details': 'disabled MFA',
+        'suspicious': True,
+    },
+    {
+        'time': 'September 26, 2025 – 5:10 PM EST',
+        'user': 'mom',
+        'action': 'login_success',
+        'geo': 'North Carolina, USA',
+        'device': 'Family Laptop',
+        'details': 'evening login',
+        'suspicious': False,
+    },
+    {
+        'time': 'September 27, 2025 – 4:15 AM EST',
+        'user': 'teacher',
+        'action': 'settings_change',
+        'geo': 'Vacation Resort',
+        'device': 'Tablet',
+        'details': 'changed grading settings',
+        'suspicious': True,
+    },
+]
 
-{"time":"September 20, 2025 – 10:18 AM EST","user":"eli","action":"login_failed","ip":"101.44.9.3","geo":"Singapore","device":"Linux","details":"wrong password 6x","label":"suspicious","reason":"🚪 Too many failed logins from a new place.","reason_es":"🚪 Demasiados intentos fallidos desde un lugar nuevo.","difficulty":"easy"}
+print("\n🕵️ Cyber Log Detective — Yes/No Game (EST)\n")
 
-{"time":"September 21, 2025 – 3:00 AM EST","user":"guest","action":"login_success","ip":"10.0.0.8","geo":"Local Network","device":"Chromebook","details":"library kiosk","label":"ok","reason":"📚 Guest login at the library is normal.","reason_es":"📚 El inicio de sesión de invitado en la biblioteca es normal.","difficulty":"easy"}
+score = 0
 
-{"time":"September 21, 2025 – 3:12 AM EST","user":"admin","action":"account_delete","ip":"172.33.90.4","geo":"Unknown","device":"Unknown","details":"deleted 20 test users","label":"suspicious","reason":"👑 Admin mass delete with unknown device.","reason_es":"👑 Eliminación masiva de cuentas por un administrador con dispositivo desconocido.","difficulty":"hard"}
+for entry in logs:
+    print(f"[{entry['time']}] user={entry['user']} {entry['action']}")
+    print(f"geo={entry['geo']} device={entry['device']} details={entry['details']}\n")
 
-{"time":"September 21, 2025 – 5:55 PM EST","user":"noah","action":"login_success","ip":"177.23.4.1","geo":"Brazil","device":"Android","details":"travel SIM","label":"ok","reason":"🛫 Login from Brazil is fine if the user is traveling.","reason_es":"🛫 Inicio de sesión desde Brasil está bien si el usuario está viajando.","difficulty":"easy"}
+    answer = input("Question: Is this suspicious? (yes/no): ").strip().lower()
+    correct = "yes" if entry["suspicious"] else "no"
 
-{"time":"September 21, 2025 – 6:03 PM EST","user":"noah","action":"login_success","ip":"68.10.5.7","geo":"North Carolina, USA","device":"Android","details":"minutes after Brazil","label":"suspicious","reason":"🛫 Impossible travel: Brazil → USA in minutes.","reason_es":"🛫 Viaje imposible: Brasil → EE.UU. en minutos.","difficulty":"easy"}
+    if answer.startswith(correct[0]):  # y/n shortcut
+        score += 1
+        if correct == "yes":
+            print("✅ Correct! This one IS suspicious.\n")
+        else:
+            print("✅ Correct! This one is NORMAL.\n")
+    else:
+        if correct == "yes":
+            print("❌ Not quite. This one IS suspicious.\n")
+        else:
+            print("❌ Not quite. This one is actually normal.\n")
 
-{"time":"September 21, 2025 – 10:12 PM EST","user":"sara","action":"login_success","ip":"190.2.1.9","geo":"Unknown","device":"Unknown","details":"new device at 3am","label":"suspicious","reason":"🌙 New device at 3am is odd.","reason_es":"🌙 Nuevo dispositivo a las 3am es extraño.","difficulty":"easy"}
-
-{"time":"September 22, 2025 – 11:05 AM EST","user":"sara","action":"file_share","ip":"68.10.5.9","geo":"North Carolina, USA","device":"Mac","details":"shared math.png with mom","label":"ok","reason":"📤 Sharing homework with mom is normal.","reason_es":"📤 Compartir la tarea con mamá es normal.","difficulty":"easy"}
-
-{"time":"September 22, 2025 – 1:22 PM EST","user":"teacher","action":"group_create","ip":"68.10.5.11","geo":"North Carolina, USA","device":"Windows","details":"created class group","label":"ok","reason":"👩‍🏫 Teacher creating a class group is expected.","reason_es":"👩‍🏫 Que el maestro cree un grupo de clase es esperado.","difficulty":"easy"}
-
-{"time":"September 22, 2025 – 1:25 PM EST","user":"teacher","action":"file_delete","ip":"46.5.19.8","geo":"Germany","device":"Windows","details":"deleted 100 photos","label":"suspicious","reason":"⚠️ Mass delete from unusual country.","reason_es":"⚠️ Eliminación masiva desde un país inusual.","difficulty":"hard"}
-
-{"time":"September 23, 2025 – 7:01 AM EST","user":"dad","action":"login_success","ip":"68.10.5.7","geo":"North Carolina, USA","device":"iPhone","details":"lunch break","label":"ok","reason":"🍔 Normal login at lunch break.","reason_es":"🍔 Inicio de sesión normal en la hora del almuerzo.","difficulty":"easy"}
-
-{"time":"September 23, 2025 – 7:02 AM EST","user":"dad","action":"settings_change","ip":"68.10.5.7","geo":"North Carolina, USA","device":"iPhone","details":"turned on MFA","label":"ok","reason":"👍 Turning on MFA is good.","reason_es":"👍 Activar MFA es bueno.","difficulty":"easy"}
-
-{"time":"September 23, 2025 – 6:59 PM EST","user":"guest","action":"login_failed","ip":"200.1.2.3","geo":"Unknown","device":"Unknown","details":"wrong password 9x","label":"suspicious","reason":"🚪 Many wrong passwords at midnight.","reason_es":"🚪 Muchos intentos de contraseña fallidos a medianoche.","difficulty":"easy"}
-
-{"time":"September 25, 2025 – 10:30 AM EST","user":"sara","action":"login_success","ip":"99.22.45.2","geo":"California, USA","device":"New Laptop","details":"first time seen","label":"suspicious","reason":"🤔 New device but normal time. Tricky!","reason_es":"🤔 Nuevo dispositivo pero en horario normal. ¡Difícil!","difficulty":"hard"}
-
-{"time":"September 25, 2025 – 6:22 AM EST","user":"emma","action":"file_share","ip":"88.12.3.2","geo":"UK","device":"Mac","details":"shared cat.png","label":"ok","reason":"🐱 Sharing a cat picture is fine.","reason_es":"🐱 Compartir una foto de gato está bien.","difficulty":"easy"}
-
-{"time":"September 25, 2025 – 9:40 PM EST","user":"admin","action":"settings_change","ip":"200.99.10.3","geo":"Russia","device":"Linux","details":"disabled MFA","label":"suspicious","reason":"🚨 Turning off MFA at 2am from far away is bad.","reason_es":"🚨 Desactivar MFA a las 2am desde lejos es malo.","difficulty":"hard"}
-
-{"time":"September 26, 2025 – 5:10 PM EST","user":"mom","action":"login_success","ip":"68.10.5.7","geo":"North Carolina, USA","device":"Family Laptop","details":"evening login","label":"ok","reason":"👩‍👧 Mom logging in at 10pm is fine.","reason_es":"👩‍👧 Mamá iniciando sesión a las 10pm está bien.","difficulty":"hard"}
-
-{"time":"September 27, 2025 – 4:15 AM EST","user":"teacher","action":"settings_change","ip":"123.45.67.89","geo":"Vacation Resort","device":"Tablet","details":"changed grading settings","label":"suspicious","reason":"🏖️ Teacher changing settings while on vacation is odd.","reason_es":"🏖️ Que el maestro cambie la configuración en vacaciones es extraño.","difficulty":"hard"}
-
+print(f"Game over! You answered {score} out of {len(logs)} correctly.\n")
