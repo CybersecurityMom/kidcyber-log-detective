@@ -1,0 +1,3 @@
+# KidCyber Log Detective Scoreboard
+# Scores will be saved here automatically.
+ 
